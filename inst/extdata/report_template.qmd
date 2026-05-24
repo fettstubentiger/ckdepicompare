@@ -1,0 +1,51 @@
+---
+title: "CKD-EPI 2009 Creatinine vs CKD-EPI 2021 Creatinine"
+format: html
+embed-resources: true
+params:
+  df: NULL
+  ckdepi2009cr_egfr: NULL
+  ckdepi2021cr_egfr: NULL
+  ckdepi2009cr_ckd_stages: NULL
+  ckdepi2021cr_ckd_stages: NULL
+---
+
+```{r}
+#| label: Loading Corner
+#| include: false
+library(ckdepicompare)
+df <- readRDS(params$df)
+```
+
+# Bland-Altman Plot
+
+This plot compares the estimated glomerular filtration rate (eGFR) values of patients derived from both the CKD-EPI 2009 Creatinine and the CKD-EPI 2021 Creatinine equations.
+
+```{r}
+#| label: Bland-Altman Plot
+#| echo: false
+baplotr::plot_ba(
+  df = df,
+  methodA = params$ckdepi2009cr_egfr,
+  methodB = params$ckdepi2021cr_egfr,
+  title = "CKD-EPI 2009 Creatinine vs CKD-EPI 2021 Creatinine",
+  xlabel = "Mean of CKD-EPI 2009 Creatinine eGFR and CKD-EPI 2021 Creatinine eGFR",
+  ylabel = "CKD-EPI 2009 Creatinine eGFR - CKD-EPI 2021 Creatinine eGFR"
+)
+```
+
+# Reclassification Table
+
+This table shows the amount of patients who has had their chronic kidney disease (CKD) staging changed after calculating their eGFR using the CKD-EPI 2021 Creatinine equation.
+
+```{r}
+#| label: Reclassification Table
+#| echo: false
+tbl <- reclass_table(
+  df = df,
+  ckdepi2009cr_ckdstage = params$ckdepi2009cr_ckd_stages,
+  ckdepi2021cr_ckdstage = params$ckdepi2021cr_ckd_stages
+)
+kableExtra::kbl(tbl) |>
+  kableExtra::add_header_above(c("CKD-EPI 2009 Cr" = 1, "CKD-EPI 2021 Cr"= 6), font_size = 11)
+```

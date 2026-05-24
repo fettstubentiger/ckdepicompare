@@ -1,0 +1,14 @@
+Package: ckdepicompare
+Title: CKD-EPI Compare
+Description: Tool to for analysing and comparing the 2009 and 2021 CKD-EPI Creatinine Equations.
+Version: 0.1.0
+Authors@R: person("Ryan", "Tan", email = "twjryan.acad@gmail.com", role = c("aut", "cre", "cph"))
+License: MIT + file LICENSE
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+    baplotr,
+    dplyr,
+    kableExtra,
+    quarto

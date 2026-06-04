@@ -43,9 +43,10 @@ This table shows the amount of patients who has had their chronic kidney disease
 #| echo: false
 tbl <- reclass_table(
   df = df,
-  ckdepi2009cr_ckdstage = params$ckdepi2009cr_ckd_stages,
-  ckdepi2021cr_ckdstage = params$ckdepi2021cr_ckd_stages
+  ckdepi2009cr_ckd_stages = params$ckdepi2009cr_ckd_stages,
+  ckdepi2021cr_ckd_stages = params$ckdepi2021cr_ckd_stages
 )
+
 kableExtra::kbl(tbl) |>
   kableExtra::add_header_above(c("CKD-EPI 2009 Cr" = 1, "CKD-EPI 2021 Cr"= 6), font_size = 11)
 ```

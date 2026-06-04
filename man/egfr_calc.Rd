@@ -5,7 +5,7 @@
 A function that calculates the eGFR using the CKD-EPI 2009 Creatinine (without race variable) and/or the CKD-EPI 2021 Creatinine equations.
 }
 \usage{
-egfr_calc(df, age, SCr, sex, equation)
+egfr_calc(df, age, SCr, sex, equation = "Both")
 }
 \arguments{
 \item{df}{A data frame containing the age, SCr, and sex columns.}

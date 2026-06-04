@@ -9,7 +9,7 @@ ckd_stager(df, eGFR)
 }
 \arguments{
 \item{df}{A data frame containing a eGFR column.}
-\item{eGFR}{A character string of the name of the eGFR column.}
+\item{eGFR}{A character string or character vector of of the name(s) of the eGFR column(s).}
 }
 \value{
 A modified version of the inputted data frame with additional column(s) containing the assigned chronic kidney disease stages.

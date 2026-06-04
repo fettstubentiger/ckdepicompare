@@ -5,7 +5,7 @@
 A function that creates a table object of a CKD-EPI 2009 Creatinine equation (without race variable) chronic kidney disease to CKD-EPI 2021 Creatinine equation chronic kidney disease reclassification table.
 }
 \usage{
-reclass_table(ckdepi2009cr_ckd_stages, ckdepi2021cr_ckd_stages)
+reclass_table(ckdepi2009cr_ckd_stages = "CKD-EPI 2009 Cr CKD Stages", ckdepi2021cr_ckd_stages = "CKD-EPI 2021 Cr CKD Stages")
 }
 \arguments{
 \item{df}{A data frame containing both the CKD-EPI 2009 Cr CKD Stages and CKD-EPI 2021 Cr CKD Stages columns.}
